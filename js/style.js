@@ -35,7 +35,7 @@ function cadastrarCliente() {
 
       // Outras validações necessárias...
 
-      if (!/^\d+$/.test(rua.value) || !/^[a-zA-Z]+$/.test(nome.value)) {
+      if (!/^\d+$/.test(rua.value) && !/^[a-zA-Z]+$/.test(nome.value)) {
         throw "Número de rua inválido. Deve conter apenas números ou letras";
       }
 
@@ -45,10 +45,6 @@ function cadastrarCliente() {
 
       if (!/^[a-zA-Z]+$/.test(bairro.value)) {
         throw "Bairro inválido. Deve conter apenas letras";
-      }
-
-      if (!/^[a-zA-Z]+$/.test(pontoReferencia.value)) {
-        throw "Ponto de referência inválido. Deve conter apenas letras";
       }
 
       if (!/^[a-zA-Z]+$/.test(cidade.value)) {
