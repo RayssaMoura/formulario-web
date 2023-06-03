@@ -13,31 +13,22 @@ function cadastrarCliente() {
       var vendedor = document.getElementById("vendedor");
       var limiteCredito = document.getElementById("limiteCredito");
 
-      // Validar os campos obrigatórios
       if (!nome.value || !id.value || !tipoCliente.value || !cep.value || !rua.value || !numero.value || !bairro.value || !pontoReferencia.value || !cidade.value || !dataNascimento.value || !vendedor.value || !limiteCredito.value) {
         throw "Todos os campos devem ser preenchidos";
       }
 
-      // Validar o formato do ID
       if (!/^\d+$/.test(id.value)) {
         throw "ID inválido. Deve conter apenas números";
       }
 
-      // Validar o formato do CEP
       if (!/^\d{5}-\d{3}$/.test(cep.value)) {
         throw "CEP inválido. Formato esperado: 12345-678";
       }
 
-      // Validar o nome (apenas letras)
       if (!/^[a-zA-Z]+$/.test(nome.value)) {
         throw "Nome inválido. Deve conter apenas letras";
       }
 
-      // Outras validações necessárias...
-
-      if (!/^\d+$/.test(rua.value) && !/^[a-zA-Z]+$/.test(nome.value)) {
-        throw "Número de rua inválido. Deve conter apenas números ou letras";
-      }
 
       if (!/^\d+$/.test(numero.value)) {
         throw "Numero da casa inválido. Deve conter apenas números";
@@ -58,8 +49,7 @@ function cadastrarCliente() {
       if (!/^[a-zA-Z]+$/.test(vendedor.value)) {
         throw "Nome do vendedor inválido. Deve conter apenas letras";
       }
-
-      // Armazenar nome e ID nos cookies
+      
       document.cookie = "nome=" + nome.value;
       document.cookie = "id=" + id.value;
       document.cookie = "cep=" + cep.value;
