@@ -29,13 +29,6 @@ function cadastrarCliente() {
         throw "Nome inválido. Deve conter apenas letras";
       }
 
-
-      if (!/^\d+$/.test(numero.value)) {
-        throw "Numero da casa inválido. Deve conter apenas números";
-      }
-
-
-
       if (!/^[a-zA-Z]+$/.test(cidade.value)) {
         throw "Cidade inválida. Deve conter apenas letras";
       }
